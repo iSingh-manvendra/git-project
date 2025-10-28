@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food order form</title>
+    <link rel="stylesheet" href="food-order-form.css">
+</head>
+
+<body>
+    <div class="main">
+        <h1>Price list</h1>
+        <br>
+        <table id="table1">
+            <tr>
+                <th width="200">Food Items</th>
+                <th width="200">Price(Rs.)</th>
+            </tr>
+            <tr>
+                <th width="100">Chicken pizza</th>
+                <th width="200">700</th>
+            </tr>
+            <tr>
+                <th>Vegetable Pizza</th>
+                <th>500</th>
+            </tr>
+            <tr>
+                <th>chicken Kottu</th>
+                <th>300</th>
+            </tr>
+            <tr>
+                <th>vegitable kottu</th>
+                <th>200</th>
+            </tr>
+            <tr>
+                <th>Water Bottle</th>
+                <th>70</th>
+            </tr>
+        </table>
+        <br>
+        <h1>FIT Food - Order Form</h1>
+        <br>
+        <table id="table2">
+            <tr>
+                <td>Branch:</td>
+                <td>
+                    <select id="branch" name="area">
+                        <option value="">...Select Item...</option>
+                        <option value="Civil lines">Civil lines</option>
+                        <option value="Indira nagar">Indira nagar</option>
+                        <option value="Taramandal">Taramandal</option>
+                        <option value="Golghar">Golghar</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Customer name:</td>
+                <td><input type="text" placeholder="Customer name" id="customerName"></td>
+            </tr>
+            <tr>
+                <td>Mobile:</td>
+                <td><input type="number" placeholder="Contact no." id="contNo"></td>
+            </tr>
+        </table>
+        <br><br>
+        <table id="table3">
+            <tr>
+                <th>Food Item</th>
+                <th></th>
+                <th width="200">Quantity</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>Item 1:</td>
+                <td>
+                    <select id="food_item1">
+                        <option value="">...Select Item...</option>
+                        <option value="700">Chicken pizza</option>
+                        <option value="500">Vegetable Pizza</option>
+                        <option value="300">chicken Kottu</option>
+                        <option value="200">vegitable kottu</option>
+                        <option value="70">Water Bottle</option>
+                    </select>
+                </td>
+                <td><input type="number" placeholder="0" id="Item1Quant" class="quantInput"></td>
+                <td>
+                    <div class="div-out" id="out1">Rs.</div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Item 2:</td>
+                <td>
+                    <select id="food_item2">
+                        <option value="">...Select Item...</option>
+                        <option value="700">Chicken pizza</option>
+                        <option value="500">Vegetable Pizza</option>
+                        <option value="300">chicken Kottu</option>
+                        <option value="200">vegitable kottu</option>
+                        <option value="70">Water Bottle</option>
+                    </select>
+                </td>
+                <td><input type="number" placeholder="0" id="Item2Quant" class="quantInput"></td>
+                <td>
+                    <div class="div-out" id="out2">Rs.</div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Item 3:</td>
+                <td>
+                    <select id="food_item3">
+                        <option value="">...Select Item...</option>
+                        <option value="700">Chicken pizza</option>
+                        <option value="500">Vegetable Pizza</option>
+                        <option value="300">chicken Kottu</option>
+                        <option value="200">vegitable kottu</option>
+                        <option value="70">Water Bottle</option>
+                    </select>
+                </td>
+                <td><input type="number" placeholder="0" id="Item3Quant" class="quantInput"></td>
+                <td>
+                    <div class="div-out" id="out3">Rs.</div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Item 4:</td>
+                <td>
+                    <select id="food_item4">
+                        <option value="">...Select Item...</option>
+                        <option value="700">Chicken pizza</option>
+                        <option value="500">Vegetable Pizza</option>
+                        <option value="300">chicken Kottu</option>
+                        <option value="200">vegitable kottu</option>
+                        <option value="70">Water Bottle</option>
+                    </select>
+                </td>
+                <td><input type="number" placeholder="0" id="Item4Quant" class="quantInput"></td>
+                <td>
+                    <div class="div-out" id="out4">Rs.</div>
+                </td>
+            </tr>
+        </table>
+        <br></br>
+        <output id="gst">GST:</output>
+        <output id="totalBill">Total Bill:</output>
+        <br>
+        <div>
+            <button type="button" id="Create_bill">Create Bill</button>
+            <button type="reset" id="Clear">Clear</button>
+        </div>
+    </div>
+    <br>
+     <script src="food-order-form.js"></script>
+</body>
+
+</html>
