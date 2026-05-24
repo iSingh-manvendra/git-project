@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        input{
+            padding: 5px;
+            border-radius: 5px;
+        }
+        button{
+            padding: 5px;
+            margin-left: 10px;
+            border-radius: 4px;
+        }
+        .task{
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>To Do List</h1>
+    <form>
+        <input class="text" type="text" placeholder="Enter your task" required>
+        <button type="submit">Add Task</button>
+    </form>
+    <br><br>
+    <div class="task"></div>
+
+    <script>
+        let form = document.querySelector("form");
+        let allTask = document.querySelector(".task");
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let text = document.querySelector(".text").value;
+            let parent = document.createElement("div");
+            let task = document.createElement("span");
+            task.textContent = text;
+            task.style.fontSize = `1.3rem`;
+            parent.style.marginTop = `10px`;
+
+            let deletebtn = document.createElement("button");
+            deletebtn.textContent = "Delete";
+            deletebtn.style.marginLeft = `25px`;
+            deletebtn.style.padding = `3px`;
+            deletebtn.style.borderRadius = `5px`;
+            deletebtn.style.border = `none`;
+
+            let doneBtn = document.createElement("button");
+            doneBtn.textContent = "Done👍";
+            doneBtn.style.marginLeft = `25px`;
+            doneBtn.style.padding = `3px`;
+            doneBtn.style.borderRadius = `5px`;
+            doneBtn.style.border = `none`;
+
+
+            parent.append(task, doneBtn, deletebtn);
+            allTask.append(parent);
+
+            deletebtn.addEventListener("click", ()=> {
+                parent.remove();
+            })
+
+            doneBtn.addEventListener("click", ()=>{
+                task.style.textDecoration = `line-through`;
+                task.style.color = `grey`;
+            })
+            form.reset();
+        });
+    </script>
+</body>
+
+</html>

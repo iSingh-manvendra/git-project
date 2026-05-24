@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown timmer</title>
+</head>
+
+<body>
+    <div class="countdown">
+
+    </div>
+
+    <script>
+
+        setInterval(() => {
+            let countdown = document.querySelector(".countdown");
+            let currentDate = Date.now();
+            let eventDate = new Date(2026, 3, 19).getTime();
+            let eventCount = eventDate - currentDate;
+            
+            let day = Math.floor((eventCount) / (1000 * 60 * 60 * 24));
+            eventCount %= 1000 * 60 * 60 * 24;
+
+            let min = Math.floor((eventCount) / (1000 * 60 * 60));
+            eventCount %= 1000 * 60 * 60;
+
+            let hour = Math.floor((eventCount) / (1000 * 60 * 60));
+            eventCount %= 1000 * 60;
+
+            let sec = Math.floor((eventCount / (1000)));
+            eventCount %= 1000;
+            countdown.textContent = `${day}:Days, ${hour}:hours ${min}:min ${sec}:sec`;
+        }, 1000);
+
+
+
+
+    </script>
+</body>
+
+</html>

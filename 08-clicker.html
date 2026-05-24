@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker</title>
+    <style>
+        body {
+            background-color: black;
+            height: 100vh;
+            position: relative;
+        }
+
+        .circle {
+            position: absolute;
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            animation: grow 5s forwards;
+        }
+
+        @keyframes grow {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+                font-size: 10px;
+            }
+
+            100% {
+                transform: scale(3);
+                opacity: 0;
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        const body = document.querySelector("body");
+        body.addEventListener("click", (e) => {
+            console.log(e.clientX, e.clientY);
+
+            const circleEl = document.createElement("div");
+            circleEl.classList.add("circle");
+            circleEl.textContent = "I love you";
+
+            const color = ["red", "pink", "orange", "skyblue", "Green", "yellow", "purple"];
+            circleEl.style.backgroundColor = color[Math.floor(Math.random() * color.length)];
+
+            circleEl.style.top = `${e.clientY}px`;
+            circleEl.style.left = `${e.clientX}px`;
+
+            body.append(circleEl);
+
+            setInterval(() =>{
+                circleEl.remove();
+            },5000);
+        });
+
+    </script>
+</body>
+
+</html>

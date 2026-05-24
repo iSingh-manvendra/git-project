@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather report</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        * {
+            margin: 0%;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            background-color: rgb(2, 2, 59);
+            color: aliceblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .card {
+            height: 400px;
+            width: 350px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(135deg, #00feba, #5b548a);
+        }
+
+        .content {
+            padding: 10px;
+        }
+
+        input {
+            margin-top: 20px;
+            padding: 8px;
+            height: 20px;
+            width: 75%;
+            border-radius: 20px;
+            border: none;
+            color: rgb(19, 3, 3);
+        }
+
+        button {
+            font-size: 1rem;
+            background: white;
+            color: black;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+        }
+
+        .cloud {
+            font-size: 5rem;
+        }
+
+        #temp {
+            font-size: 3rem;
+            font-weight: 0.1em;
+        }
+
+        #city {
+            font-size: 2rem;
+            font-weight: 100;
+        }
+
+        .report1 {
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="content">
+            <center>
+                <h1>Weather report⛅</h1>
+                <div class="searchCity">
+                    <input id="cityinput" type="text" placeholder="Enter city name" type="text" spellcheck="false">
+                    <button id="searchbtn"><i id="search" class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <div class="report">
+                    <span class="cloud">⛅</span>
+                    <br>
+                    <p id="temp">54 C</p>
+                    <p id="city">Delhi</p>
+                </div>
+                <div class="report1">
+                    <div class="div1">
+                        <p id="humidity">48%</p>
+                        <p>Humidity</p>
+                    </div>
+                    <div class="div2">
+                        <p id="windSpeed"><i class="fa-solid fa-wind"></i>20.25km/h</p>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+            </center>
+        </div>
+    </div>
+
+    <script>
+        let btn = document.querySelector("#searchbtn");
+        btn.addEventListener("click", () => {
+            let location = document.querySelector("#cityinput").value;
+            let temp = document.querySelector("#temp");
+            let city = document.querySelector("#city");
+            let humidity = document.querySelector("#humidity");
+            let windSpeed = document.querySelector("#windSpeed");
+
+            async function weatherapi(location) {
+                const apikey = "d2852281c0784679afb162740260405";
+                const url = `https://api.weatherapi.com/v1/current.json?key=${apikey}&q=${location}&aqi=yes`;
+
+                try{
+                    const response = await fetch(url);
+
+                    if(!response.ok){
+                        throw new Error("City not found");    
+                    }
+
+                    const data = await response.json();
+                    city.innerHTML = data.location.name;
+                    temp.innerHTML = `${data.current.temp_c} °C`;
+                    humidity.innerHTML = `${data.current.humidity} %`;
+                    windSpeed.innerHTML = `${data.current.wind_kph}kph`
+                }
+                catch(error) {
+                    city.innerHTML = `${error.message}`;
+                    temp.innerHTML = `${error.message}`;
+                    humidity.innerHTML = `${error.message}`;
+                    windSpeed.innerHTML = `${error.message}`;
+                }
+
+            }
+             weatherapi(location);
+        });
+
+    </script>
+</body>
+
+</html>
+

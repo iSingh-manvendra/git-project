@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main {
+            background-color: aliceblue;
+            width: 600px;
+            height: 100vh;
+            margin-left: 100px;
+        }
+
+        button {
+            margin-top: 30px;
+            width: 100px;
+            height: 30px;
+            border: none;
+            background-color: rgb(36, 169, 222);
+            border-radius: 8px;
+            font-size: 1.1rem;
+            margin-left: 45%;
+        }
+
+        .out {
+            margin-left: 45%;
+            font-size: 1.3rem;
+            font-weight: bolder;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="main">
+        <div class="ques1">
+            <b>1.Who has the most centuries in international cricket?</b>
+            <br>
+            <label><input type="radio" name="q1" value="Sachin Tendulkar">Sachin Tendulkar</label>
+            <br>
+            <label><input type="radio" name="q1" value="Virat Kohli">Virat Kohli</label>
+            <br>
+            <label><input type="radio" name="q1" value="Rickey ponting">Rickey ponting</label>
+            <br>
+            <label><input type="radio" name="q1" value="MS dhoni">MS dhoni</label>
+        </div>
+
+        <div class="ques2">
+            <b>2.What is the national game of India?</b>
+            <br>
+            <label><input type="radio" name="q2" value="Cricket">Cricket</label>
+            <br>
+            <label><input type="radio" name="q2" value="Hockey">Hockey</label>
+            <br>
+            <label><input type="radio" name="q2" value="Bassketball">Bassketball</label>
+            <br>
+            <label><input type="radio" name="q2" value="Badminton">Badminton</label>
+        </div>
+
+        <div class="ques3">
+            <b>3.Which planet is known as the Morning Star?</b>
+            <br>
+            <label><input type="radio" name="q3" value="Earth">Earth</label>
+            <br>
+            <label><input type="radio" name="q3" value="venus">Venus</label>
+            <br>
+            <label><input type="radio" name="q3" value="Jupitur">Jupitur</label>
+            <br>
+            <label><input type="radio" name="q3" value="mars">Mars</label>
+        </div>
+
+        <div class="ques4">
+            <b>4.Which is the smallest planet in the solar system?</b>
+            <br>
+            <label><input type="radio" name="q4" value="Earth">Earth</label>
+            <br>
+            <label><input type="radio" name="q4" value="Venus">venus</label>
+            <br>
+            <label><input type="radio" name="q4" value="Murcury">Murcury</label>
+            <br>
+            <label><input type="radio" name="q4" value="Neptune">Neptune</label>
+        </div>
+
+        <div class="ques5">
+            <b>5.How many legs does a spider have?</b>
+            <br>
+            <label><input type="radio" name="q5" value="4">4</label>
+            <br>
+            <label><input type="radio" name="q5" value="6">6</label>
+            <br>
+            <label><input type="radio" name="q5" value="8">8</label>
+            <br>
+            <label><input type="radio" name="q5" value="9">9</label>
+        </div>
+
+        <div class="ques6">
+            <b>6.Bird symbol of peace</b>
+            <br>
+            <label><input type="radio" name="q6" value="peacock">Peacock</label>
+            <br>
+            <label><input type="radio" name="q6" value="parrot">Parrot</label>
+            <br>
+            <label><input type="radio" name="q6" value="crow">Crow</label>
+            <br>
+            <label><input type="radio" name="q6" value="Dove">Dove</label>
+        </div>
+
+        <button type="submit">Submit</button>
+
+        <output class="out"></output>
+    </form>
+
+    <script>
+        const answer = {
+            q1: "Sachin Tendulkar",
+            q2: "Hockey",
+            q3: "venus",
+            q4: "Murcury",
+            q5: "6",
+            q6: "Dove"
+        }
+        const form = document.querySelector("form");
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const data = new FormData(form);
+            let score = 0;
+            for (let [name, value] of data.entries()) {
+                if (answer[name] == value)
+                    score++;
+            }
+            let scoreOut = document.querySelector(".out");
+            scoreOut.textContent = `Your score: ${score}`;
+            scoreOut.style.color = `black`;
+            scoreOut.style.marginTop = `20px`;
+        })
+    </script>
+</body>
+
+</html>

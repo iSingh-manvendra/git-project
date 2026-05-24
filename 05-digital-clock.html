@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: aliceblue;
+            background-color: black;
+        }
+        .timmer{
+            font-size: 3rem;
+        }
+    </style>
+</head>
+<body>
+     <div class="timmer"></div>
+
+     <script>
+        let timmer = document.querySelector(".timmer");
+        setInterval(() => {
+        let time = new Date();
+        // console.log(time.toLocaleTimeString());
+        timmer.textContent = time.toLocaleTimeString();
+        }, 1000);
+
+       
+        
+     </script>
+</body>
+</html>
