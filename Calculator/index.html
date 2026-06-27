@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+
+<body>
+
+    <div class="main">
+        <h1><u>Calculator</u></h1>
+        <input class="out" type="text" readonly>
+        <br><br>
+        <div class="numBox">
+            <button id="allClr" onclick="clearDisplay()">AC</button>
+            <button id="clr" onclick="clearLast()">CL</button>
+            <button id="divide" onclick="appendValue('/')">/</button>
+            <button id="2zero" onclick="appendValue('00')">00</button>
+            <br>
+            <button id="one" onclick="appendValue('1')">1</button>
+            <button id="two" onclick="appendValue('2')">2</button>
+            <button id="three" onclick="appendValue('3')">3</button>
+            <button id="add" onclick="appendValue('+')">+</button>
+            <br>
+            <button id="four" onclick="appendValue('4')">4</button>
+            <button id="five" onclick="appendValue('5')">5</button>
+            <button id="six" onclick="appendValue('6')">6</button>
+            <button id="subt" onclick="appendValue('-')">-</button>
+            <br>
+            <button id="seven" onclick="appendValue('7')">7</button>
+            <button id="eight" onclick="appendValue('8')">8</button>
+            <button id="nine" onclick="appendValue('9')">9</button>
+            <button id="mult" onclick="appendValue('*')">*</button>
+            <br>
+            <button id="percent" onclick="appendValue('%')">%</button>
+            <button id="zero" onclick="appendValue('0')">0</button>
+            <button id="dec" onclick="appendValue('.')">.</button>
+            <button id="equal" onclick="calculate()">=</button>
+        </div>
+    </div>
+
+    <script src="calculator.js"></script>
+
+</body>
+
+</html>

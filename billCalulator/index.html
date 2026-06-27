@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip calculator</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+        }
+        .main{
+            padding: 5%;
+            height:60vmin;
+            width: 40vmin;
+            background-color: darkseagreen;
+            border-radius: 10px;
+            font-size: 1.5rem;
+        }
+        input{
+            height: 40px;
+            border-radius: 5px;
+        }
+        button{
+            height: 30px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h1>Tip Calculator</h1>
+        <label>Enter Total amount</label>
+        <br><br>
+        <input type="number" placeholder="Amount" id="billAmount">
+        <br><br>
+        <label>Enter percentage</label>
+        <br><br>
+        <input type="text" id="percentage" placeholder="Enter %">
+        <br><br>
+        <button id="calculate">Calculate</button>
+        <hr>
+        <output id="output">Total bill:₹0</output>
+        
+    </div>
+
+    <script src="billCalculator.js"></script>
+</body>
+
+</html>
