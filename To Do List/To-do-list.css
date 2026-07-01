@@ -1,0 +1,53 @@
+.container {
+            height: 60vh;
+            width: 30vw;
+            background-color: cadetblue;
+            margin-left: 33%;
+            border-radius: 10px;
+            text-align: center;
+            padding: 20px;
+        }
+
+
+        input {
+            height: 50px;
+            width: 250px;
+            border-radius: 5px;
+            border: none;
+            font-family: monospace;
+            font-size: 1.4rem;
+        }
+
+        button {
+            height: 50px;
+            width: 220px;
+            border-radius: 5px;
+            border: none;
+            font-family: monospace;
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 1200px) {
+            .container {
+                width: 60vh;
+                margin-left: 10%;
+
+            }
+
+            input {
+                width: 80%;
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            .container {
+                width: 100%;
+                margin: 0;
+            }
+
+            input {
+                height: 50px;
+                width: 90%;
+            }
+        }

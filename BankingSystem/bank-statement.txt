@@ -1,0 +1,25 @@
+
+
+--------New account holder----------Manvendra Singh19393saving
+10000,deposited successfully, current balance: 10000
+20000,deposited successfully, current balance: 30000
+5000,withdraw successfully, current Balance: ,25000
+--------Account holder details---------
+Acocunt Holder name: Manvendra Singh
+Account number: 19393
+Accout type: saving
+Account Balance: 25000
+Thank you for using our banking system
+
+--------New account holder----------
+Harshit Singh393322saving
+20000,deposited successfully, current balance: 20000
+50000,deposited successfully, current balance: 70000
+2000,withdraw successfully, current Balance: ,68000
+5000,withdraw successfully, current Balance: ,63000
+--------Account holder details---------
+Acocunt Holder name: Harshit Singh
+Account number: 393322
+Accout type: saving
+Account Balance: 63000
+Thank you for using our banking system

@@ -1,0 +1,80 @@
+ * {
+     margin: 0;
+     padding: 0;
+ }
+
+ h1 {
+     text-align: center;
+     background-color: black;
+     color: aliceblue;
+     font-size: 3rem;
+     font-family: fantasy;
+ }
+
+ .choices {
+     margin-top: 2%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ #rock {
+     width: 30vmin;
+     height: 30vmin;
+     background-image: url(stone.png);
+     background-size: cover;
+     border-radius: 50%;
+ }
+
+ #rock:hover {
+     cursor: pointer;
+     box-shadow: 5px 5px 5px 5px wheat;
+     transition: box-shadow 0.8s ease;
+ }
+
+ #paper {
+     width: 30vmin;
+     height: 30vmin;
+     background-image: url(paper.png);
+     background-size: cover;
+     border-radius: 50%;
+ }
+ #paper:hover {
+     cursor: pointer;
+     box-shadow: 5px 5px 5px 5px wheat;
+     transition: box-shadow 0.8s ease;
+ }
+
+ #scissor {
+     width: 30vmin;
+     height: 30vmin;
+     background-image: url(scissor.png);
+     background-size: cover;
+     border-radius: 50%;
+ }
+ #scissor:hover {
+     cursor: pointer;
+     box-shadow: 5px 5px 5px 5px wheat;
+     transition: box-shadow 0.8s ease-out;
+ }
+
+ .score-board {
+     margin-top: 5%;
+     font-size: 2rem;
+     font-family: fantasy;
+     display: flex;
+     justify-content: center;
+     text-align: center;
+     gap: 5%;
+ }
+
+ #msg {
+     margin-top: 5%;
+     text-align: center;
+     font-family: fantasy;
+     background-color: black;
+     color: aliceblue;
+     border-radius: 8px;
+     font-size: 2rem;
+     cursor: pointer;
+ }
